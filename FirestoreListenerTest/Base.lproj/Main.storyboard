@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QQW-g4-SNs">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="5vc-yG-DZh">
+            <objects>
+                <navigationController id="QQW-g4-SNs" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VKW-xr-IGP">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="yrT-Oc-tSm" kind="relationship" relationship="rootViewController" id="zzg-Hb-h05"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0R-2M-j9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-825" y="220"/>
+        </scene>
+        <!--Firestore Listener Test-->
+        <scene sceneID="bVE-8G-Oen">
+            <objects>
+                <viewController id="yrT-Oc-tSm" customClass="ViewController" customModule="FirestoreListenerTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kzk-aT-nMN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4p-5U-em3">
+                                <rect key="frame" x="120" y="84" width="134" height="30"/>
+                                <state key="normal" title="Add Large Data Set"/>
+                                <connections>
+                                    <action selector="buttonTappedAddData:" destination="yrT-Oc-tSm" eventType="touchUpInside" id="7aJ-5t-jsE"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="nzC-gw-wmK">
+                                <rect key="frame" x="16" y="134" width="343" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0e-fP-IqY">
+                                        <rect key="frame" x="0.0" y="0.0" width="137" height="30"/>
+                                        <state key="normal" title="Create Listener (All)"/>
+                                        <connections>
+                                            <action selector="buttonTappedCreateListener:" destination="yrT-Oc-tSm" eventType="touchUpInside" id="nwm-Yf-NpN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8E-FD-BMe">
+                                        <rect key="frame" x="198" y="0.0" width="145" height="30"/>
+                                        <state key="normal" title="Create Listener (100)"/>
+                                        <connections>
+                                            <action selector="buttonTappedCreatePagedListener:" destination="yrT-Oc-tSm" eventType="touchUpInside" id="rVt-c8-Ryc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="drd-8E-e2q">
+                                <rect key="frame" x="16" y="172" width="343" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8z-Da-7L2">
+                                        <rect key="frame" x="0.0" y="0.0" width="139" height="30"/>
+                                        <state key="normal" title="Get Documents (All)"/>
+                                        <connections>
+                                            <action selector="buttonTappedGetDocuments:" destination="yrT-Oc-tSm" eventType="touchUpInside" id="D7O-dt-d6G"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wmr-LW-UJf">
+                                        <rect key="frame" x="195" y="0.0" width="148" height="30"/>
+                                        <state key="normal" title="Get Documents (100)"/>
+                                        <connections>
+                                            <action selector="buttonTappedGetPagedDocuments:" destination="yrT-Oc-tSm" eventType="touchUpInside" id="y0u-oK-4HX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jGG-cR-LCM">
+                                <rect key="frame" x="16" y="234" width="343" height="413"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.95144314236111116" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="drd-8E-e2q" firstAttribute="leading" secondItem="E8p-ag-A13" secondAttribute="leading" constant="16" id="3Kf-X7-Ikg"/>
+                            <constraint firstItem="nzC-gw-wmK" firstAttribute="top" secondItem="E4p-5U-em3" secondAttribute="bottom" constant="20" id="4Xe-tH-aNI"/>
+                            <constraint firstItem="nzC-gw-wmK" firstAttribute="leading" secondItem="E8p-ag-A13" secondAttribute="leading" constant="16" id="7BQ-3r-nSH"/>
+                            <constraint firstItem="jGG-cR-LCM" firstAttribute="leading" secondItem="E8p-ag-A13" secondAttribute="leading" constant="16" id="Hof-jc-rl8"/>
+                            <constraint firstItem="E8p-ag-A13" firstAttribute="trailing" secondItem="nzC-gw-wmK" secondAttribute="trailing" constant="16" id="INe-rF-B3b"/>
+                            <constraint firstItem="jGG-cR-LCM" firstAttribute="top" secondItem="drd-8E-e2q" secondAttribute="bottom" constant="32" id="Je6-t4-jEj"/>
+                            <constraint firstItem="E8p-ag-A13" firstAttribute="trailing" secondItem="drd-8E-e2q" secondAttribute="trailing" constant="16" id="LfC-tD-87Y"/>
+                            <constraint firstItem="E8p-ag-A13" firstAttribute="bottom" secondItem="jGG-cR-LCM" secondAttribute="bottom" constant="20" id="cJr-xy-FEJ"/>
+                            <constraint firstItem="E8p-ag-A13" firstAttribute="trailing" secondItem="jGG-cR-LCM" secondAttribute="trailing" constant="16" id="fEK-It-6YU"/>
+                            <constraint firstItem="drd-8E-e2q" firstAttribute="centerX" secondItem="E8p-ag-A13" secondAttribute="centerX" id="gYb-au-T0Q"/>
+                            <constraint firstItem="E4p-5U-em3" firstAttribute="top" secondItem="E8p-ag-A13" secondAttribute="top" constant="20" id="iYy-hh-oiP"/>
+                            <constraint firstItem="E4p-5U-em3" firstAttribute="centerX" secondItem="E8p-ag-A13" secondAttribute="centerX" id="ka8-D9-XJe"/>
+                            <constraint firstItem="drd-8E-e2q" firstAttribute="top" secondItem="nzC-gw-wmK" secondAttribute="bottom" constant="8" id="nKN-z9-96z"/>
+                            <constraint firstItem="nzC-gw-wmK" firstAttribute="centerX" secondItem="E8p-ag-A13" secondAttribute="centerX" id="umL-mf-AEv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="E8p-ag-A13"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Firestore Listener Test" id="sQU-Vi-WIp"/>
+                    <connections>
+                        <outlet property="textView" destination="jGG-cR-LCM" id="df0-Xi-ulp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CFu-Md-9Cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-183.19999999999999" y="219.94002998500753"/>
+        </scene>
+    </scenes>
+</document>
